@@ -2,7 +2,9 @@ name: Validador de Estructura Lean
 
 on:
   push:
-  pull_request:
+  branches:
+  -main
+  -release/*
 
 jobs:
   validar:
