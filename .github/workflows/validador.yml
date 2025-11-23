@@ -1,0 +1,19 @@
+name: Validador de Estructura Lean
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Verificar presencia de carpetas
+        run: |
+          test -d checklists || exit 1
+          test -d auditorias || exit 1
+          test -d docs || exit 1
